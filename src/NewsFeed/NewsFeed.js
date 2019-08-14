@@ -1,7 +1,14 @@
+// @flow
 import React from 'react';
 
-export default class NewsFeed extends React.Component {
-  constructor(props) {
+type State = {
+  isLoaded: boolean,
+  error: ?string,
+  articles: ?any[]
+};
+
+export default class NewsFeed extends React.Component<Props, State>{
+  constructor(props: any) {
     super(props);
     this.state = {
       isLoaded: false,
@@ -10,6 +17,7 @@ export default class NewsFeed extends React.Component {
     }
   }
   componentDidMount() {
+    process.env.REACT_APP_NEWS_API_KEY && (
     fetch(`https://newsapi.org/v2/top-headlines?country=gb&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`)
       .then(res => res.json())
       .then(
@@ -27,6 +35,7 @@ export default class NewsFeed extends React.Component {
           });
         }
       )
+    )
   }
 
   render() {

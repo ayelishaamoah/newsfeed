@@ -1,0 +1,22 @@
+[ignore]
+.*/node_modules/.*
+# <PROJECT_ROOT> is treated as the absolute path to the project
+<PROJECT_ROOT>/bin/.*
+<PROJECT_ROOT>/build/.*
+<PROJECT_ROOT>/doc/.*
+<PROJECT_ROOT>/public/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=.json
+suppress_comment=\\(.\\|\n\\)*\\$FlowIgnoreError
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
+
+[strict]
