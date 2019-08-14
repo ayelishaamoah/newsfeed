@@ -7,6 +7,7 @@ type State = {
   articles: ?any[]
 };
 
+// $FlowFixMe
 export default class NewsFeed extends React.Component<Props, State>{
   constructor(props: any) {
     super(props);
