@@ -40,7 +40,6 @@ export default class NewsFeed extends React.Component<Props, State>{
   }
   render() {
     const { articles } = this.state;
-    console.log(articles)
 
     return (
       <div>
