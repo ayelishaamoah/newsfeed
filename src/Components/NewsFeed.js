@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
-import moment from 'moment';
-
+import { NewsSummaryCard } from './NewsSummaryCard'
 type State = {
   isLoaded: boolean,
   error: ?string,
@@ -47,14 +46,7 @@ export default class NewsFeed extends React.Component<Props, State>{
       <div>
       <h1>News Feed</h1>
       {articles && articles.map((article, index) => {
-      return (
-        <div key={index}>
-        <h3>{article.title}</h3>
-        <p>{article.description}</p>
-        <p>Author: {article.author}</p>
-        <p>Published: {moment(article.publishedAt).format('DD-MM-YYYY')}</p>
-        </div>
-      )
+        return <NewsSummaryCard article={article} key={index}/>
       })
       }
       </div>

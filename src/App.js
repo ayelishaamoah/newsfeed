@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Newsfeed from './NewsFeed/NewsFeed'
+import Newsfeed from './Components/NewsFeed'
 
 function App() {
   return (
