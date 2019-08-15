@@ -5,6 +5,7 @@
 <PROJECT_ROOT>/build/.*
 <PROJECT_ROOT>/doc/.*
 <PROJECT_ROOT>/public/.*
+<PROJECT_ROOT>/node_modules/.*
 
 [include]
 

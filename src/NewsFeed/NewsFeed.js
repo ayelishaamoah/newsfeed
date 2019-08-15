@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import moment from 'moment';
 
 type State = {
   isLoaded: boolean,
@@ -38,11 +39,24 @@ export default class NewsFeed extends React.Component<Props, State>{
       )
     )
   }
-
   render() {
+    const { articles } = this.state;
+    console.log(articles)
+
     return (
       <div>
       <h1>News Feed</h1>
+      {articles && articles.map((article, index) => {
+      return (
+        <div key={index}>
+        <h3>{article.title}</h3>
+        <p>{article.description}</p>
+        <p>Author: {article.author}</p>
+        <p>Published: {moment(article.publishedAt).format('DD-MM-YYYY')}</p>
+        </div>
+      )
+      })
+      }
       </div>
     );
   }
